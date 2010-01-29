@@ -25,36 +25,36 @@
 
 class GameFramework
 {
-public:
-	GameFramework( int argc, char* argv[] );
-	~GameFramework(void);
+    public:
+        GameFramework( int argc, char* argv[] );
+        ~GameFramework(void);
 
-	static void setInstance( GameFramework * framework );
-	static void renderSceneWrapper();
-	static void resizeWindowWrapper( GLsizei w, GLsizei h );
-	static void timerFunctionWrapper( int value );
-	static void mouseClickWrapper( int mouseButton, int mouseState,
-								int mouseXPos, int mouseYPos );
+        static void setInstance( GameFramework * framework );
+        static void renderSceneWrapper();
+        static void resizeWindowWrapper( GLsizei w, GLsizei h );
+        static void timerFunctionWrapper( int value );
+        static void mouseClickWrapper( int mouseButton, int mouseState,
+                int mouseXPos, int mouseYPos );
 
-	void startFramework();
-	void run();
+        void startFramework();
+        void run();
 
-	virtual void renderScene();
-	virtual void setTitle( std::string t);
-	virtual void setWindowSize( int width, int height );
-	virtual void resizeWindow( GLsizei w, GLsizei h );
-	virtual void timerFunction( int value );
-	virtual void mouseClick( int mouseButton, int mouseState,
-							int mouseXPos, int mouseYPos);
+        virtual void renderScene();
+        virtual void setTitle( std::string t);
+        virtual void setWindowSize( int width, int height );
+        virtual void resizeWindow( GLsizei w, GLsizei h );
+        virtual void timerFunction( int value );
+        virtual void mouseClick( int mouseButton, int mouseState,
+                int mouseXPos, int mouseYPos);
 
-private:
-	int width, height;
-	GLfloat width_ratio, height_ratio;
-    Shape shapes[NBR_SHAPES];
-    std::string title;
+    private:
+        int width, height;
+        GLfloat width_ratio, height_ratio;
+        Shape shapes[NBR_SHAPES];
+        std::string title;
 
-	int findMouseHit(GLfloat mouseX, GLfloat mouseY);
-	void shapeToEdgeCollision( Shape &s );
+        int findMouseHit(GLfloat mouseX, GLfloat mouseY);
+        void shapeToEdgeCollision( Shape &s );
 
 };
 

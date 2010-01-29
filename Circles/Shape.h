@@ -23,43 +23,43 @@
 #define VELOCITY_UB   0.050
 
 const float COLORS[NBR_COLORS][3] = { { 0.4, 0.9, 0.9 }, // Cyan
-								    { 0.4, 0.4, 0.9 },   // Blue
-								    { 0.9, 0.0, 0.6 },   // Violet
-								    { 0.9, 0.4, 0.4 },   // Red
-								    { 0.9, 0.7, 0.4 },   // Orange
-								    { 0.9, 0.9, 0.4 } }; // Yellow
+    { 0.4, 0.4, 0.9 },   // Blue
+    { 0.9, 0.0, 0.6 },   // Violet
+    { 0.9, 0.4, 0.4 },   // Red
+    { 0.9, 0.7, 0.4 },   // Orange
+    { 0.9, 0.9, 0.4 } }; // Yellow
 
 class Shape
 {
-public:
-	Vector2D position;
-	Vector2D velocity;
+    public:
+        Vector2D position;
+        Vector2D velocity;
 
-	Shape(void);
-	Shape(float x, float y);
-	~Shape(void);
+        Shape(void);
+        Shape(float x, float y);
+        ~Shape(void);
 
-	void setPosition( float x, float y );
-	void setRadius( float r );
-	void setMass( float m );
+        void setPosition( float x, float y );
+        void setRadius( float r );
+        void setMass( float m );
 
-	float getRadius() const;
-	float getX() const;
-	float getY() const;
-	Vector2D getVelocity() const;
-	float getMass() const;
-	Vector2D getPosition() const;
+        float getRadius() const;
+        float getX() const;
+        float getY() const;
+        Vector2D getVelocity() const;
+        float getMass() const;
+        Vector2D getPosition() const;
 
-	virtual void draw();
-	bool colliding( Shape & shape );
-	void resolveCollision ( Shape & shape );
+        virtual void draw();
+        bool colliding( Shape & shape );
+        void resolveCollision ( Shape & shape );
 
-protected:
-	float radius;
-	float mass;
-	float color[3];
-	
-	void Initialize();
+    protected:
+        float radius;
+        float mass;
+        float color[3];
+
+        void Initialize();
 
 };
 #endif

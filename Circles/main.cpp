@@ -2,10 +2,11 @@
 
 int main( int argc, char* argv[] )
 {
-	GameFramework *g = new GameFramework( argc, argv );
-	g->setInstance(g);
-	g->startFramework();
-	g->run();
+    GameFramework *g = new GameFramework( argc, argv );
+    g->setInstance(g);
+    g->setTitle("Circle Demo");
+    g->startFramework();
+    g->run();
 
     return 0;
 }
